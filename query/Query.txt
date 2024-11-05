@@ -1,0 +1,10 @@
+CREATE DATABASE todo_app; -- todo_app adlı bir veritabanı oluşturuyoruz.
+
+USE todo_app; -- Kullanmak istediğimiz veritabanını seçiyoruz.
+
+CREATE TABLE todos ( -- Görevleri saklamak için 'todos' adlı bir tablo oluşturuyoruz.
+    id INT AUTO_INCREMENT PRIMARY KEY, -- Her görev için benzersiz bir kimlik belirliyoruz, bu otomatik olarak artan bir tam sayı.
+    title VARCHAR(255) NOT NULL, -- Görev başlığını tutacak, boş olamaz.
+    is_completed BOOLEAN DEFAULT 0, -- Görevin tamamlanıp tamamlanmadığını belirten bir alan, varsayılan olarak tamamlanmamış (0).
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP -- Görevin eklendiği zamanı otomatik olarak ayarlayan bir zaman damgası.
+);
